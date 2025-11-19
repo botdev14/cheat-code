@@ -1,6 +1,7 @@
 {
   "name": "@repo/database",
   "version": "1.0.0",
+  "type": "module",
   "exports": {
     ".": "./src/client.ts"
   },
@@ -9,21 +10,25 @@
     "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "tsx src/seed.ts",
-    "dev": "tsup src/* --watch",
+    "db:studio": "pnpx prisma studio",
+    "dev": "tsup --watch",
     "format": "prisma format",
     "generate": "prisma generate",
     "lint": "eslint . --max-warnings 0",
-    "prebuild": "npm run generate",
-    "predev": "npm run generate",
-    "studio": "prisma studio"
+    "prebuild": "pnpm run generate",
+    "predev": "pnpm run generate"
   },
   "dependencies": {
-    "@prisma/client": "latest"
+    "@prisma/adapter-better-sqlite3": "^7.0.0",
+    "@prisma/client": "latest",
+    "dotenv": "^17.2.3"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "eslint": "^8.57.0",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^20",
+    "eslint": "^9",
     "prisma": "latest",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",

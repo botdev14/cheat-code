@@ -10,15 +10,17 @@
     "db:migrate:dev": "turbo run db:migrate:dev",
     "db:push": "turbo run db:push",
     "db:seed": "turbo run db:seed",
+    "db:studio": "turbo run db:studio",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "generate": "turbo run generate",
     "lint": "turbo run lint"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
+    "eslint": "^9",
+    "prettier": "^3.6.2",
     "prisma": "latest",
-    "tsx": "4.19.1",
+    "tsx": "4.20.6",
     "turbo": "^2.6.1"
   },
   "engines": {
